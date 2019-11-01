@@ -1,4 +1,4 @@
-# tif-to-heic-script
+# tif-to-heic
 A script that converts tif images into heic images
 This script uses libheif for converting from jpg to heic.
 It uses imagemagick for conversion from tif to jpg
