@@ -10,4 +10,4 @@ The only dependencies are libheif, libde265 and imagemagick.
 
 Usage: Put the script in the folder that your tif and or jpg files are located in and run it.
 
-# Warning: Use copies of your images in an empty directory because the script removes jpg's and tif's, it only saves the heic files.
+## Warning: Use copies of your images in an empty directory because the script removes jpg's and tif's, it only saves the heic files.
