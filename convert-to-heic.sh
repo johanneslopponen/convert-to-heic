@@ -1,18 +1,22 @@
 #!/bin/bash
 
 #declare variables
-originals="*.tif"
+tif_originals="*.tif"
+tiff_originals="*.tiff"
 count=0
-count2=0
+count1=0
+
+#convert tiff's to jpg's
+for file in $tiff_originals
+do convert $file converted-image-$count.jpg
+((count++))
+done
 
 #convert tif's to jpg's
-for file in $originals
-do convert $file converted-image-$count2.jpg
-echo "image, $count"
+for file in $tif_originals
+do convert $file converted-image-$count.jpg
 ((count++))
-((count2++))
 done
-echo "continuing"
 
 #convert jpg's to heic file's with decoder set to ultrafast
 jpg_originals="*.jpg"
@@ -23,7 +27,18 @@ echo "Image $count3, done"
 ((count3++))
 done
 
-#remove jpg's
+#convert jpeg's to heic file's with decoder set to ultrafast
+jpeg_originals="*.jpeg"
+for file2 in $jpeg_originals
+do heif-enc -L -p preset=ultrafast $file2
+echo "Image $count3, done"
+((count3++))
+done
+
+#remove jpg's and tifs
 rm *.jpg
-echo "Done!"
+rm *.jpeg
+rm *.tif
+rm *.tiff
+echo "Done!, Shutting down!"
 sleep 1s
