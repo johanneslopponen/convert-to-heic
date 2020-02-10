@@ -1,4 +1,4 @@
-tif-to-heic
+convert-to-heic
 ===========
 This script converts tif and jpg images into images using the [High Efficiency Image File Format](https://en.wikipedia.org/wiki/High_Efficiency_Image_File_Format) in the heic container.
 This script uses libheif for converting from jpg to heic.
